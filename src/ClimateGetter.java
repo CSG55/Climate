@@ -63,7 +63,8 @@ public class ClimateGetter {
 
 	/**
 	 * Getter method! 
-	 * Blank string "" returned if no data present for precip/temp.
+	 * If no data present for precip/temp, null is returned.
+	 * If some data is missing for a city, null will fill its place.
 	 * @param userCities client provided string	 
 	 * @return ArrayList<ArrayList<String[]>> containing climate data in the ArrayList format [season, season, season, season], where season contains the climate data for every city
 	 * @throws IOException
@@ -198,7 +199,7 @@ public class ClimateGetter {
 	}
 
 	public static void main(String[] args) throws IOException {
-		String[] x = { "Woodstock,ON", "Orangeville,ON", "Oakville,ON", "Richmond,BC", "Vancouver,BC", "OTTAWA,ON",
+		String[] x = { "Woodstock,on", "Orangeville,ON", "Oakville,ON", "Richmond,BC", "Vancouver,BC", "OTTAWA,ON",
 				"Toronto,ON", "Irvine,AB", "Barrie,ON", "Hamilton,ON" };
 
 		ArrayList<ArrayList<String[]>> test = getClimate(x);
